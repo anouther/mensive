@@ -1,0 +1,79 @@
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js">
+</script>
+<link href="style.css" rel="stylesheet" type="text/css" /><script src="script.js"></script>
+<body>
+<style>body{background-image: url("bg.jpg");background-repeat: no-repeat;background-size: 100% 100%;font-family: 'Balsamiq Sans', cursive; animation:none;transition:all .3s ease;}</style>
+
+<div id="konten"><div id="foto"><div class="image"><img id="photo" src="love.gif" width="200px" height="200px"/></div><span id="sp2"></span></div>
+
+<div id='slider'>
+  <p>there you are, hello&nbsp;<b id="kamu"></b></p>
+  <p>halo, cantikku eyy sekarang tanggal berapa inget gaa? </p>
+  <p>sekarang itu tanggal dimana kamu resmi jadi milik aku begitu juga sebaliknya</p>
+  <p>i am very happy, because at this moment I am still with the same person.</p>
+  <p>the person who made me fall in love, the person who managed to captivate my heart</p>
+  <p>btw, kamu tau lagu ini kan? lagunya ngegambarin banget gimana spesialnya kamu dimata aku</p>
+  <p>'kutuliskan kenangan tentang caraku menemukan dirimu' </p>
+  <p>coba flashback gimana kita bisa ketemu berawal dari saling kenal malah jadi saling sayang haha manis banget kisah kita</p>
+  <p>'tentang apa yang membuatku mudah berikan hatiku padamu'</p>
+  <p>haha gimana aku ga jatuh hati sama sosok sesempurna kamu, sosok yang paling ngertiin aku dan selalu jadi alasan aku tersenyum</p>
+  <p>'takkan habis sejuta lagu untuk menceritakan cantikmu'</p>
+  <p>bukan cuma cantik, kamu juga lemah lembut, gemes, imut,penyanyang dan lucu milikin kamu itu kaya pake lengkap banget dah</p>
+  <p>'kan teramat panjang puisi tuk menyuratkan cinta ini'</p>
+  <p>aku harap ini bukan terakhir kalinya aku ucapin happy mensive, karna sejujurnya aku pengen bikin cerita lebih panjang bareng kamu</p>
+  <p>Telah habis sudah cinta ini tak lagi tersisa untuk dunia
+  <p>karena telah kuhabiskan, sisa cintaku hanya untukmu</p>
+  <p>i'm sorry if as long as i'm with you, i still can't be what you want.</p>
+  <p>but honestly, i always try to make you happy. sorry if it didn't work </p>
+  <p>maaf kalau aku orangnya ga pekaan suka ngilang ga ngabarin dan suka emosi tiba-tiba</p>
+  <p>i'm so lucky to have you in my life, and i think that's not even enough to describe it all</p>
+  <p>Pencet LOVE ini<label class='lovein' onClick="duar()">&#128158;</label></p>
+</div><div id="contTom"><a class='button whatsapp' onClick='bukaWa();'><i class='icon whatsapp'></i>Kirim</a></div>
+</div>
+<div id="bodyblur"></div>
+
+<script>  
+var a=0,finish;
+finish = "Happy mensive, darling. Yang jelas, you should know how much i love you. I love you, to the sun & moon and never be back ❤️ tap iconnya ya";
+
+function play() {
+  var audio = new Audio('Starla.mp3');
+  audio.play();
+}
+            
+ function bukaWa(){window.location = "https://t.me/giftvirtual"}
+</script>
+ 
+<script type="text/javascript">            
+            var today = new Date();var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()+'.';var dateTime = date;
+            const swals = Swal.mixin({
+                allowOutsideClick: false,
+            });
+            async function mulai(){
+                var { value: nama } = await swals.fire({
+                    title: 'Masukin nama kamu!',
+                    input: 'text',
+                    confirmButtonText: 'next',
+                    showCancelButton: false,
+                });                           
+                if(nama){
+                	window.nama = nama;
+                    finish = finish + ", " + nama + "!";    
+                    document.getElementById("kamu").innerHTML = "" + window.nama;
+                    setTimeout(showDiv, 700);play();                      
+                } else {
+                    await swals.fire('Heh! Jangan dikosongin atuh namanya buru isi 😡');
+                    mulai();
+                }
+            }
+            mulai();
+</script>
+</body>
+</html>
